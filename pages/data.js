@@ -72,7 +72,7 @@ const Data = (props) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
   const response = await axios.get("http://localhost:3001/api/hello");
   return { props: response.data };
 }
