@@ -72,9 +72,9 @@ const Data = (props) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const response = await axios.get("http://localhost:3001/api/hello");
-  return { props: response.data };
+  return { props: response.data, revalidate: 1 };
 }
 
 export default Data;
